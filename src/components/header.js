@@ -1,23 +1,15 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import headerCSS from "./header.module.scss"
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <div>
-      <h1>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+export default function  Header({ siteTitle }){
+  return (
+    <header className={`${headerCSS.headerClass}`}>
+      <div>
+        <h1>
+          <Link to="/">{siteTitle}</Link>
+        </h1>
+      </div>
+    </header>
+  )
 }
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
